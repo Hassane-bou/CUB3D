@@ -47,3 +47,57 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
+
+
+
+# NAME = cub3D
+
+# SRC = src/intersections.c src/Draw_map.c src/main.c src/ft_player.c src/draw_utils.c \
+# 	parsing/get_next_line/get_next_line.c parsing/get_next_line/get_next_line_utils.c \
+# 	parsing/cub3d.c parsing/libft/ft_split.c parsing/libft/ft_strncmp.c parsing/libft/ft_isspace.c parsing/libft/ft_atoi.c \
+# 	parsing/libft/ft_isdigit.c parsing/libft/ft_strcmp.c parsing/check_colors.c parsing/check_textures.c parsing/textures.c \
+# 	parsing/check_textures1.c parsing/check_colors1.c parsing/count_utils.c parsing/utils_map.c parsing/utils_map1.c \
+# 	parsing/utils.c src/ft_player_utils.c src/intersections_utils.c src/intersections_utils2.c parsing/free_textures.c \
+# 	src/cleanup.c src/utils.c src/rayCasting.c
+
+# CC = cc
+# CFLAGS = -Wall -Wextra -Werror -I includes #-fsanitize=address -g
+
+# # Homebrew prefix dynamique
+# BREW_PREFIX = $(HOME)/.brew
+
+# # MLX42
+# MLX42_PATH = $(BREW_PREFIX)/MLX42
+# MLX42_INC  = -I $(MLX42_PATH)/include
+# MLX42_LIB  = -L $(MLX42_PATH)/build -lmlx42
+
+# # GLFW
+# GLFW_PREFIX = $(BREW_PREFIX)/opt/glfw
+# GLFW_INC    = -I $(GLFW_PREFIX)/include
+# GLFW_LIB    = -L $(GLFW_PREFIX)/lib -lglfw
+
+# # Frameworks macOS
+# FRAMEWORKS = -framework Cocoa -framework OpenGL -framework IOKit
+
+# # Libft
+# LIBFT = lib/libft.a
+
+# OBJ = $(SRC:.c=.o)
+
+# all: $(NAME)
+
+# $(NAME): $(OBJ)
+# 	$(CC) $(CFLAGS) $(OBJ) $(MLX42_LIB) $(GLFW_LIB) $(FRAMEWORKS) $(LIBFT) -o $(NAME)
+
+# %.o: %.c includes/cub3d.h
+# 	$(CC) $(CFLAGS) $(MLX42_INC) $(GLFW_INC) -c $< -o $@
+
+# clean:
+# 	rm -f $(OBJ)
+
+# fclean: clean
+# 	rm -f $(NAME)
+
+# re: fclean all
+
+# .PHONY: all clean fclean re
