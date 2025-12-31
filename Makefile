@@ -9,8 +9,8 @@ SRC = src/intersections.c src/Draw_map.c src/main.c src/ft_player.c src/draw_uti
 		src/cleanup.c src/utils.c src/raycasting.c
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror 
-MLX = -I $(HOME)/MLX42/include -L $(HOME)/MLX42/build -lmlx42 -framework Cocoa -framework OpenGL -framework IOKit
+CFLAGS = -Wall -Wextra -Werror -Iincludes -I$(HOME)/.brew/MLX42/include
+MLX = -I $(HOME)/.brew/MLX42/include -L $(HOME)/.brew/MLX42/build -lmlx42 -framework Cocoa -framework OpenGL -framework IOKit
 
 LGLFW = -L $(HOME)/.brew/opt/glfw/lib -lglfw
 
