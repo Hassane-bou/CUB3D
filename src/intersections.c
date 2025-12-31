@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   intersections.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: haboucha <haboucha@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/20 10:39:37 by rmouafik          #+#    #+#             */
+/*   Updated: 2025/12/30 10:04:13 by haboucha         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/cub3d.h"
 
 void	select_hit(t_var *v)
@@ -86,15 +98,15 @@ void	draw_textured_wall(int rayid, t_var *v, t_cube *g, double ray_angle)
 			tex->texx = tex->width - tex->texx - 1;
 	}
 	tex->pixels = (uint8_t *)tex->img->pixels;
-	tex->step = 1.0 * tex->height / v->wallstripheight;
+	tex->step =  tex->height / v->wallstripheight;
 	tex->texpos = (v->top - g->win_h / 2 + v->wallstripheight / 2) * tex->step;
+	// printf("%d\n",g->cube->floor_color);
 	render_textures(rayid, g, v, tex);
 }
 
 void	compute_projection(t_var *v, int rayid, t_cube *g, double ray_angle)
 {
 	int	y;
-
 	if (!g->img || g->win_w <= 0 || g->win_h <= 0)
 		return ;
 	v->distanceprojectionplane = (g->win_w / 2) / tan(FOV / 2);
