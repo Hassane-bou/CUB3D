@@ -6,7 +6,7 @@
 /*   By: rmouafik <rmouafik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/20 10:39:41 by rmouafik          #+#    #+#             */
-/*   Updated: 2025/12/21 11:18:52 by rmouafik         ###   ########.fr       */
+/*   Updated: 2025/12/22 12:47:34 by rmouafik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ void	parsing_checks3(t_cube game, t_game *cube)
 	{
 		clean_up(game.cube);
 		write(2, "Error\n", 7);
-		write(2, "map invalid!!\n", 15);
+		write(2, "invalid map!!\n", 15);
 		exit(1);
 	}
 	if (!element_valid(game.cube->map))
 	{
 		clean_up(game.cube);
 		write(2, "Error\n", 7);
-		write(2, "element incorrect in new map !!\n", 33);
+		write(2, "incorrect element in new map !!\n", 33);
 		exit(1);
 	}
 }
@@ -84,8 +84,6 @@ int	ft_mlx_render(t_game *cube, t_cube game)
 	mlx_image_to_window(game.mlx, game.img, 0, 0);
 	mlx_resize_hook(game.mlx, ft_resize, &game);
 	init_player(game.map, &game);
-	if (game.win_h > 100 && game.win_w > 100)
-		draw_map(game.map, &game);
 	mlx_loop_hook(game.mlx, update_player, &game);
 	mlx_loop(game.mlx);
 	free_split(cube->new_map);
